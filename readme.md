@@ -4,7 +4,7 @@
 
 O teste prático .NET é um exercício para estender a funcionalidade de uma solução existente.
 
-** O teste é avaliado em: **
+**O teste é avaliado em: **
 
 1. Programação orientada a objeto (OOP)
 2. Facilidade de leitura (readability)
@@ -59,19 +59,24 @@ A solução deve:
 
 **Exemplos de entrada e saída (atualmente)**
 
-1,2,3,4   =>   carne,batata,vinho,bolo 
-4,2,2,1   =>   carne,batata(x2),bolo 
-1,2,3,5   =>   error 
-1,3,2,3   =>   error 
+| **Entrada**       | **Saída** |
+| -------------     | -------------     |
+| 1,2,3,4           | carne,batata,vinho,bolo   |
+| 4,2,2,1           | carne,batata(x2),bolo   |
+| 1,2,3,5           | error   |
+| 1,3,2,3           | error   |
+
 
 **Exemplos de entrada e saída (como deverá ficar)**
 
-manhã, 1, 2, 3     =>   ovos,torrada,café
-Manhã,3,3,3        =>   café(x3)
-manhã ,1,3,2,3     =>   ovos,torrada,café(x2)
-manhã, 1, 2, 2     =>   error
-manhã, 1, 2, 4     =>   error
-noite,1, 2, 3, 4   =>   carne,batata,vinho,bolo
-Noite,1, 2, 2, 4   =>   carne,batata(x2),bolo
-noite,1, 2, 3, 5   =>   error
-noite,1, 3, 2, 3   =>   error
+| **Entrada**               | **Saída** |
+| -------------             | -------------     |
+|manhã, 1, 2, 3             | carne,batata,vinho,bolo   |
+|Manhã,3,3,3                | carne,batata(x2),bolo   |
+|manhã ,1,3,2,3             | error   |
+|manhã, 1, 2, 2             | error   |
+|manhã, 1, 2, 4             | carne,batata,vinho,bolo   |
+|noite,1, 2, 3, 4           | carne,batata(x2),bolo   |
+|Noite,1, 2, 2, 4           | error   |
+|noite,1, 2, 3, 5           | error   |
+|noite,1, 3, 2, 3           | error   |
