@@ -7,6 +7,8 @@ namespace Application
     {
         private readonly IDishManager _dishManager;
 
+        private string horario;
+
         public Server(IDishManager dishManager)
         {
             _dishManager = dishManager;
@@ -17,7 +19,7 @@ namespace Application
             try
             {
                 Order order = ParseOrder(unparsedOrder);
-                List<Dish> dishes = _dishManager.GetDishes(order);
+                List<Dish> dishes = _dishManager.GetDishes(order, horario);
                 string returnValue = FormatOutput(dishes);
                 return returnValue;
             }
@@ -35,7 +37,23 @@ namespace Application
                 Dishes = new List<int>()
             };
 
-            var orderItems = unparsedOrder.Split(',');
+            try
+            {
+                horario = unparsedOrder.Substring(0, unparsedOrder.IndexOf(",")).Trim();
+            }
+            catch
+            {
+                throw new ApplicationException("Formato incorreto");
+            }
+
+            if (!horario.Equals("manha", StringComparison.InvariantCultureIgnoreCase) &&
+                !horario.Equals("manhã", StringComparison.InvariantCultureIgnoreCase) &&
+                !horario.Equals("noite", StringComparison.InvariantCultureIgnoreCase))
+            {
+                throw new ApplicationException("É necessário definir o horario (manhã ou noite) antes de inserir o número dos pedidos");
+            }
+
+            var orderItems = unparsedOrder.Remove(0, unparsedOrder.IndexOf(",") + 1).Split(',');
             foreach (var orderItem in orderItems)
             {
                 if (int.TryParse(orderItem, out int parsedOrder))
