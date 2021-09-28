@@ -39,7 +39,7 @@ A solução deve:
     - Você pode ter vários pedidos de batatas (mas ainda não mais do que 1 de cada um dos outros Tipos de Prato)
     - Se mais de um Tipo de Prato for inserido, imprima uma vez, seguido por "(xN)", por exemplo, "batata(x2)"
 
-**Pratos do período da noite**
+**Pratos do período da NOITE**
 
 | **Tipo do Prato** | **Nome do Prato** |
 | -------------     | -------------     |
@@ -48,13 +48,17 @@ A solução deve:
 | 3 (bebida)        | vinho             |
 | 4 (sobremesa)     | bolo              |
 
-**Pratos do período da manhã**
+**Pratos do período da MANHÃ**
 
 | **Tipo do Prato** | **Nome do Prato** |
 | -------------     | -------------     |
 | 1 (entrada)       | ovos              |
 | 2 (acompanhamento)| torrada           |
 | 3 (bebida)        | café              |
+
+
+
+
 
 
 **Exemplos de entrada e saída (atualmente)**
@@ -67,16 +71,20 @@ A solução deve:
 | 1,3,2,3           | error   |
 
 
+
+
+
+
 **Exemplos de entrada e saída (como deverá ficar)**
 
 | **Entrada**               | **Saída** |
 | -------------             | -------------     |
-|manhã, 1, 2, 3             | carne,batata,vinho,bolo   |
-|Manhã,3,3,3                | carne,batata(x2),bolo   |
-|manhã ,1,3,2,3             | error   |
+|manhã, 1, 2, 3             | ovos,torrada,café   |
+|Manhã,3,3,3                | café(x3)   |
+|manhã ,1,3,2,3             | ovos,torrada,café(x2)   |
 |manhã, 1, 2, 2             | error   |
-|manhã, 1, 2, 4             | carne,batata,vinho,bolo   |
-|noite,1, 2, 3, 4           | carne,batata(x2),bolo   |
-|Noite,1, 2, 2, 4           | error   |
+|manhã, 1, 2, 4             | error   |
+|noite,1, 2, 3, 4           | carne,batata,vinho,bolo   |
+|Noite,1, 2, 2, 4           | carne,batata(x2),bolo   |
 |noite,1, 2, 3, 5           | error   |
 |noite,1, 3, 2, 3           | error   |
